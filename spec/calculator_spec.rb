@@ -26,5 +26,10 @@ describe Calculator do
     end
   end
 
+  context '#average_spend' do
+    it 'returns the average spend for an email address' do
+      expect(calculator.average_spend('user@user.com')).to eq 125
+    end
+  end
 
 end

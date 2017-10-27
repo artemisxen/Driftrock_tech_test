@@ -18,11 +18,15 @@ class Calculator
     purchases = @data.purchases_collection.get_purchases_by_user_id(user.id)
     sum = 0
     purchases.map { |purchase| sum += purchase.spend.to_f }
-    sum
+    result = sum
   end
 
   def average_spend(email)
-
+    user = @data.users_collection.get_user_by_email(email)
+    purchases = @data.purchases_collection.get_purchases_by_user_id(user.id)
+    sum = 0
+    purchases.map { |purchase| sum += purchase.spend.to_f }
+    result = sum / purchases.length
   end
 
   def most_loyal
