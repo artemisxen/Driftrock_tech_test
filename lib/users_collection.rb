@@ -6,10 +6,10 @@ class UsersCollection
   end
 
   def add(user)
-    @users << user
+    users << user
   end
 
   def get_user_by_email(email)
-    @users.find { |user| user.email == email }
+    users.find { |user| user.email == email }
   end
 end
