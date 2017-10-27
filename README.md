@@ -63,6 +63,10 @@ $ rspec
 ```
 
 ### Screenshots
-![commands](/img/commands.png)
+![commands](/img/commands.png =200x)
 
-![tests](/img/tests.png)
+![tests](/img/tests.png =200x)
+
+### Improvements
+To improve the performance of the app I have set the results per page of the API call to 10.000 for the users and the purchases in order to avoid too many API calls. This reduced the time but it can be improved further.
+If we could cache locally the users and all queries were run against the cache, the waiting time would be reduced significantly. If a user is not found in the cache only then we fetch all the users from the API.

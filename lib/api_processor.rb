@@ -19,32 +19,33 @@ class ApiProcessor
 
   USER_URL = 'https://driftrock-dev-test-2.herokuapp.com/users'
   PURCHASE_URL = 'https://driftrock-dev-test-2.herokuapp.com/purchases'
-
+  PAGE_SIZE = 10000
+  
   def get_users(users_collection)
     page = 1
-    data = request_data(USER_URL, 10000, page)
-    until data.length != 10000 do
+    data = request_data(USER_URL, PAGE_SIZE, page)
+    until data.length != PAGE_SIZE do
       data.each do |user|
         new_user = User.new(user['id'], user['first_name'], user['last_name'],
                             user['phone'], user['email'])
         users_collection.add(new_user)
       end
       page += 1
-      data = request_data(USER_URL, 10000, page)
+      data = request_data(USER_URL, PAGE_SIZE, page)
     end
   end
 
   def get_purchases(purchases_collection)
     page = 1
-    data = request_data(PURCHASE_URL, 40000, page)
-    until data.length != 40000 do
+    data = request_data(PURCHASE_URL, PAGE_SIZE, page)
+    until data.length != PAGE_SIZE do
       data.each do |purchase|
         purchase = Purchase.new(purchase['user_id'], purchase['item'],
                                 purchase['spend'])
         purchases_collection.add(purchase)
       end
       page += 1
-      data = request_data(PURCHASE_URL, 40000, page)
+      data = request_data(PURCHASE_URL, PAGE_SIZE, page)
     end
   end
 
