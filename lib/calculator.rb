@@ -33,18 +33,18 @@ class Calculator
 
   def most_loyal
     users_purchases = []
-    @users.users.map { |user| users_purchases << {user_id: user.id, email: user.email, purchases: @purchases.get_purchases_by_user_id(user.id).count}}
-    users_purchases.max_by{ |k| k[:purchases]}[:email]
+    @users.users.map { |user| users_purchases << { user_id: user.id, email: user.email, purchases: @purchases.get_purchases_by_user_id(user.id).count } }
+    users_purchases.max_by { |k| k[:purchases] } [:email]
   end
 
   def highest_value
     users_total_spend = []
-    @users.users.each { |user| users_total_spend << {email: user.email, spend: total_spend(user.email)}}
-    users_total_spend.max_by{ |k| k[:spend]}[:email]
+    @users.users.each { |user| users_total_spend << { email: user.email, spend: total_spend(user.email) } }
+    users_total_spend.max_by { |k| k[:spend]}[:email]
   end
 
   def most_sold
-    items_purchases = @purchases.purchases.group_by { |purchase| purchase.item}.map{|k,v| [k, v.count]}
-    items_purchases.max_by{|k,v| v}[0]
+    items_purchases = @purchases.purchases.group_by { |purchase| purchase.item}.map{|k,v| [k, v.count] }
+    items_purchases.max_by { |k,v| v } [0]
   end
 end

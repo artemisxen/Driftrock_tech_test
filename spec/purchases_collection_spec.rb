@@ -2,9 +2,9 @@ require 'purchases_collection'
 
 describe PurchasesCollection do
   subject(:purchases_collection) { described_class.new }
-  let(:purchase1) { double :purchase, user_id: '1', item: '1', spend: 100}
-  let(:purchase2) { double :purchase, user_id: '2', item: '1', spend: 300}
-  let(:purchase3) { double :purchase, user_id: '1', item: '2', spend: 50}
+  let(:purchase1) { double :purchase, user_id: '1', item: '1', spend: 100 }
+  let(:purchase2) { double :purchase, user_id: '2', item: '1', spend: 300 }
+  let(:purchase3) { double :purchase, user_id: '1', item: '2', spend: 50 }
 
   it 'starts with an empty array of purchases' do
     expect(purchases_collection.purchases).to be_empty
