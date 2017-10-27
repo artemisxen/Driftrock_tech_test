@@ -45,6 +45,8 @@ class Calculator
   end
 
   def most_sold
-
+    purchases = @data.purchases_collection.purchases
+    items_purchases = purchases.group_by { |purchase| purchase.item}.map{|k,v| [k, v.count]}
+    items_purchases.max_by{|k,v| v}[0]
   end
 end

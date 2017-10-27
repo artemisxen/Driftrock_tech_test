@@ -7,9 +7,10 @@ describe Calculator do
   let(:users_collection) { double :users_collection,  users: [user1, user2], get_user_by_email: user1}
   let(:user1) { double :user, email: 'user@user.com', id: '1'}
   let(:user2) { double :user, email: 'user2@user.com', id: '2'}
-  let(:purchases_collection) { double :purchases_collection, get_purchases_by_user_id: [purchase1, purchase2]}
-  let(:purchase1) { double :purchase, id: '1', spend: '100'}
-  let(:purchase2) { double :purchase, id: '1', spend: '150'}
+  let(:purchases_collection) { double :purchases_collection, purchases: [purchase1, purchase2, purchase3], get_purchases_by_user_id: [purchase1, purchase2]}
+  let(:purchase1) { double :purchase, user_id: '1', item: 'item1', spend: '100'}
+  let(:purchase2) { double :purchase, user_id: '2', item: 'item2', spend: '150'}
+  let(:purchase3) { double :purchase, user_id: '1', item: 'item1', spend: '150'}
 
   context '#initialize' do
     it 'starts with a new api_processor' do
@@ -45,4 +46,9 @@ describe Calculator do
     end
   end
 
+  context '#most_sold' do
+    it 'returns the item with the most purchases' do
+      expect(calculator.most_sold).to eq 'item1'
+    end
+  end
 end
