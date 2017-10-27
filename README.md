@@ -63,9 +63,9 @@ $ rspec
 ```
 
 ### Screenshots
-![commands](/img/commands.png =200x)
+![commands](/img/commands.png)
 
-![tests](/img/tests.png =200x)
+![tests](/img/tests.png)
 
 ### Improvements
 To improve the performance of the app I have set the results per page of the API call to 10.000 for the users and the purchases in order to avoid too many API calls. This reduced the time but it can be improved further.
