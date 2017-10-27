@@ -1,6 +1,3 @@
-require_relative 'users_collection'
-require_relative 'purchases_collection'
-
 class DataStorage
   attr_reader :users_collection, :purchases_collection
 
