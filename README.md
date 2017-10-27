@@ -32,17 +32,32 @@ I want to know the name of the most sold item
 The code structure consists of 7 classes as following:
 - User class: Responsible for holding the properties of a user
 - Purchase class: Responsible for holding the properties of a purchase
-- UsersCollection class: Responsible for holding all the users and filtering with email, id, etc.
-- PurchasesCollection Class: Responsible for holding all the purchases and filtering with user_id, etc.
-- DataStorage class: Responsible for storing all the DataStorage
+- UsersCollection class: Responsible for holding all the users and filtering by email.
+- PurchasesCollection Class: Responsible for holding all the purchases and filtering by user_id.
+- DataStorage class: Responsible for storing all the data
 - ApiProcessor class: Responsible for requesting the data from the external Api
-- Calculator class: Responsible for calculating the total_spend, average_spend etc.
+- Calculator class: Responsible for calculating the total_spend, average_spend, most_loyal, highest_value, most_sold.
 
 
 ### Instructions
+```
+$ git clone https://github.com/artemisxen/Driftrock_tech_test.git
+$ cd driftrock_tech_test
+$ bundle install
+```
 
+###### To run the commands from the command line:
+```
+$ cd lib
+$ ruby app.rb total_spend email
+$ ruby app.rb average_spend email
+$ ruby app.rb most_loyal
+$ ruby app.rb highest_value
+$ ruby app.rb most_sold
+
+```
 
 ###### To run the tests:
 ```
-> rspec
+$ rspec
 ```
