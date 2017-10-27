@@ -41,7 +41,7 @@ The code structure consists of 7 classes as following:
 
 ### Instructions
 ```
-$ git clone https://github.com/artemisxen/Driftrock_tech_test.git
+$ git clone https://github.com/artemisxen/driftrock_tech_test.git
 $ cd driftrock_tech_test
 $ bundle install
 ```
@@ -61,3 +61,8 @@ $ ruby app.rb most_sold
 ```
 $ rspec
 ```
+
+### Screenshots
+![commands](/img/commands.png)
+
+![tests](/img/tests.png)

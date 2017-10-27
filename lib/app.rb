@@ -16,5 +16,5 @@ when 'highest_value'
 when 'most_sold'
   p calculator.most_sold
 else
-  p 'Please provide command name'
+  p 'Please provide the correct command name'
 end
