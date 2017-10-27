@@ -38,14 +38,14 @@ class ApiProcessor
 
   def get_purchases(purchases_collection)
     page = 1
-    data = request_data( PURCHASE_URL, 10000, page)
+    data = request_data( PURCHASE_URL, 40000, page)
     data.each do |purchase|
       purchase = Purchase.new(purchase['user_id'], purchase['item'], purchase['spend'])
       purchases_collection.add(purchase)
     end
-    while data.length == 10000 do
+    while data.length == 40000 do
       page += 1
-      data = request_data( PURCHASE_URL, 10000, page)
+      data = request_data( PURCHASE_URL, 40000, page)
       data.each do |purchase|
         purchase = Purchase.new(purchase['user_id'], purchase['item'], purchase['spend'])
         purchases_collection.add(purchase)

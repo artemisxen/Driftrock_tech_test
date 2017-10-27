@@ -39,4 +39,10 @@ describe Calculator do
     end
   end
 
+  context '#highest_value' do
+    it 'returns the email address with the most purchases' do
+      expect(calculator.highest_value).to eq 'user@user.com'
+    end
+  end
+
 end
