@@ -32,8 +32,8 @@ I want to know the name of the most sold item
 The code structure consists of 7 classes as following:
 - User class: Responsible for holding the properties of a user
 - Purchase class: Responsible for holding the properties of a purchase
-- UserCollection class: Responsible for holding all the users and filtering with email, id, etc.
-- PurchaseCollection Class: Responsible for holding all the purchases and filtering with user_id, etc.
+- UsersCollection class: Responsible for holding all the users and filtering with email, id, etc.
+- PurchasesCollection Class: Responsible for holding all the purchases and filtering with user_id, etc.
 - DataStorage class: Responsible for storing all the DataStorage
 - ApiProcessor class: Responsible for requesting the data from the external Api
 - Calculator class: Responsible for calculating the total_spend, average_spend etc.
